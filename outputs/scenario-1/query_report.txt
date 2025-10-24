@@ -1,0 +1,7 @@
+=== CUSTOM QUERY REPORT ===
+- Occupation of PersonX [SELECT]:
+    - {'occupation': 'http://example.org/ontology#Barista'}
+- CustomerY is Arrogant? [ASK]: yes
+- CustomerY is Polite? [ASK]: yes
+- Arrogant inverseOf Polite? [ASK]: yes
+- CustomerY both Arrogant and Polite? [ASK]: yes

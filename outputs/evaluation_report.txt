@@ -1,0 +1,30 @@
+==== EVALUATION REPORT ====
+
+[scenario-1] Barista in Utrecht and an Arrogant Customer
+  OCS before: 0.5000 (checks=2, violations=1)
+  OCS after : 1.0000  (checks=1, violations=0)
+  VPS before/after: 1.0 → 0.0
+  Repair Success: yes
+  FMR (after): 1.0
+
+[scenario-2] Firefighters Responding to an Earthquake in Tokyo
+  OCS before: 0.5000 (checks=2, violations=1)
+  OCS after : 1.0000  (checks=1, violations=0)
+  VPS before/after: 1.0 → 0.0
+  Repair Success: yes
+  FMR (after): 1.0
+
+[scenario-3] Doctor in Amsterdam with First COVID-19 Patient
+  OCS before: 0.5000 (checks=2, violations=1)
+  OCS after : 1.0000  (checks=1, violations=0)
+  VPS before/after: 1.0 → 0.0
+  Repair Success: yes
+  FMR (after): 1.0
+
+---- GLOBAL METRICS ----
+Inconsistency Rate (IR): 0.0000
+Violations per Story (VPS): 0.0000
+Repair Success Rate (RSR): 1.00
+Factual Match Rate (FMR, mean): 1.0
+Avg OCS before: 0.5000
+Avg OCS after : 1.0000

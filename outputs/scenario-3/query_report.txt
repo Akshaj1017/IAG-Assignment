@@ -1,0 +1,9 @@
+=== CUSTOM QUERY REPORT ===
+- Symptoms of Covid19 [SELECT]:
+    - {'symptom': 'http://example.org/ontology#Coughing'}
+    - {'symptom': 'http://example.org/ontology#Fever'}
+- PatientX typed as Disease (any)? [ASK]: yes
+- PatientX has Covid19? [ASK]: yes
+- Amsterdam is a City? [ASK]: yes
+- Any Protocol appliesTo Covid19? [ASK]: yes
+- PatientX both Healthy and Covid19? [ASK]: yes

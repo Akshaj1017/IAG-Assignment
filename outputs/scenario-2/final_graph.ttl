@@ -1,0 +1,107 @@
+@prefix ex: <http://example.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Amsterdam a ex:City .
+
+ex:Barista a ex:Occupation,
+        owl:Class ;
+    rdfs:subClassOf ex:Occupation .
+
+ex:CovidEvent a owl:Class .
+
+ex:CustomerY a ex:Arrogant,
+        ex:Person ;
+    rdfs:label "CustomerY" ;
+    ex:hasTrait ex:Arrogant .
+
+ex:Disease a owl:Class .
+
+ex:Doctor a ex:Occupation,
+        owl:Class ;
+    rdfs:subClassOf ex:Occupation .
+
+ex:Event a owl:Class .
+
+ex:EventX a ex:QuakeEvent ;
+    ex:locatedIn ex:Tokyo .
+
+ex:Facility a owl:Class .
+
+ex:Landmark a owl:Class .
+
+ex:Polite a ex:PersonTrait,
+        owl:Class .
+
+ex:Protocol a owl:Class .
+
+ex:QuakeEvent_1 a ex:QuakeEvent .
+
+ex:QuakeEvent_2 a ex:QuakeEvent ;
+    ex:hasMagnitude 8.0 ;
+    ex:locatedIn ex:Tokyo ;
+    ex:requiresResource ex:Ambulance,
+        ex:BreathingApparatus,
+        ex:Comms,
+        ex:Firetruck,
+        ex:Hose,
+        ex:RescueTools .
+
+ex:Resource a owl:Class .
+
+ex:Sparse a ex:Population,
+        owl:Class .
+
+ex:Symptom a owl:Class .
+
+ex:UnnamedFirefighter_1 a ex:Person ;
+    rdfs:label "UnnamedFirefighter_1" ;
+    ex:hasOccupation ex:Firefighter .
+
+ex:UnnamedFirefighter_2 a ex:Person ;
+    rdfs:label "UnnamedFirefighter_2" ;
+    ex:hasOccupation ex:Firefighter .
+
+ex:Utrecht a ex:City .
+
+ex:Ambulance a owl:Class .
+
+ex:BreathingApparatus a owl:Class .
+
+ex:Comms a owl:Class .
+
+ex:Crowded a ex:Population,
+        owl:Class .
+
+ex:Firetruck a owl:Class .
+
+ex:Hose a owl:Class .
+
+ex:RescueTools a owl:Class .
+
+ex:Arrogant a ex:PersonTrait,
+        owl:Class .
+
+ex:Firefighter a ex:Occupation,
+        owl:Class ;
+    rdfs:subClassOf ex:Occupation .
+
+ex:PersonTrait a owl:Class .
+
+ex:Population a owl:Class .
+
+ex:Tokyo a ex:City ;
+    rdfs:label "Tokyo" ;
+    ex:hasPopulation ex:Crowded ;
+    ex:isDrivable true ;
+    ex:isWalkable true .
+
+ex:City a owl:Class .
+
+ex:Person a owl:Class .
+
+ex:QuakeEvent a owl:Class .
+
+ex:Occupation a owl:Class .
+

@@ -1,0 +1,2 @@
+## Logical — Logical constraint issues (cardinality, legality, typing, symmetry).
+1. Trait conflict: ex:CustomerY cannot be both ex:Arrogant and ex:Polite.

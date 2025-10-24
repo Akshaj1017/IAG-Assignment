@@ -1,0 +1,9 @@
+=== CUSTOM QUERY REPORT ===
+- Population types of Tokyo [SELECT]:
+    - {'population': 'http://example.org/ontology#Crowded'}
+- Mobility true for Tokyo (isWalkable/isDrivable) [SELECT]:
+    - {'mobility': 'http://example.org/ontology#isWalkable'}
+    - {'mobility': 'http://example.org/ontology#isDrivable'}
+- EventX is Earthquake (QuakeEvent)? [ASK]: yes
+- Is Firefighter an Occupation? [ASK]: yes
+- Tokyo is a City? [ASK]: yes

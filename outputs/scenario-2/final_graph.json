@@ -1,0 +1,282 @@
+[
+  {
+    "@id": "http://example.org/ontology#Firetruck",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Doctor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://example.org/ontology#Occupation"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Crowded",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#QuakeEvent_1",
+    "@type": [
+      "http://example.org/ontology#QuakeEvent"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#CovidEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#PersonTrait",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#UnnamedFirefighter_1",
+    "@type": [
+      "http://example.org/ontology#Person"
+    ],
+    "http://example.org/ontology#hasOccupation": [
+      {
+        "@id": "http://example.org/ontology#Firefighter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "UnnamedFirefighter_1"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Person",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Polite",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Arrogant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Comms",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Tokyo",
+    "@type": [
+      "http://example.org/ontology#City"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Tokyo"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Symptom",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Barista",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://example.org/ontology#Occupation"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#QuakeEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#QuakeEvent_2",
+    "@type": [
+      "http://example.org/ontology#QuakeEvent"
+    ],
+    "http://example.org/ontology#hasMagnitude": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8.0"
+      }
+    ],
+    "http://example.org/ontology#locatedIn": [
+      {
+        "@id": "http://example.org/ontology#Tokyo"
+      }
+    ],
+    "http://example.org/ontology#requiresResource": [
+      {
+        "@id": "http://example.org/ontology#Firetruck"
+      },
+      {
+        "@id": "http://example.org/ontology#Hose"
+      },
+      {
+        "@id": "http://example.org/ontology#BreathingApparatus"
+      },
+      {
+        "@id": "http://example.org/ontology#Ambulance"
+      },
+      {
+        "@id": "http://example.org/ontology#RescueTools"
+      },
+      {
+        "@id": "http://example.org/ontology#Comms"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#BreathingApparatus",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Landmark",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Sparse",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Facility",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Protocol",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Event",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#City",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Firefighter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://example.org/ontology#Occupation"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Resource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Occupation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Hose",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Population",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Disease",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#CustomerY",
+    "@type": [
+      "http://example.org/ontology#Person",
+      "http://example.org/ontology#Arrogant"
+    ],
+    "http://example.org/ontology#hasTrait": [
+      {
+        "@id": "http://example.org/ontology#Arrogant"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "CustomerY"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Ambulance",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#RescueTools",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#UnnamedFirefighter_2",
+    "@type": [
+      "http://example.org/ontology#Person"
+    ],
+    "http://example.org/ontology#hasOccupation": [
+      {
+        "@id": "http://example.org/ontology#Firefighter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "UnnamedFirefighter_2"
+      }
+    ]
+  }
+]

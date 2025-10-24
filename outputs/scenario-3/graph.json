@@ -1,0 +1,303 @@
+[
+  {
+    "@id": "http://example.org/ontology#CovidIsolationProtocol",
+    "@type": [
+      "http://example.org/ontology#Protocol"
+    ],
+    "http://example.org/ontology#appliesTo": [
+      {
+        "@id": "http://example.org/ontology#Covid19"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Firetruck",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Doctor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://example.org/ontology#Occupation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://example.org/ontology#Occupation"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Dyspnea",
+    "@type": [
+      "http://example.org/ontology#Symptom"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#CovidEvent_1",
+    "@type": [
+      "http://example.org/ontology#CovidEvent"
+    ],
+    "http://example.org/ontology#locatedIn": [
+      {
+        "@id": "http://example.org/ontology#Amsterdam"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Crowded",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#CovidEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#PersonTrait",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Person",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Polite",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://example.org/ontology#PersonTrait"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Arrogant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://example.org/ontology#PersonTrait"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Utrecht",
+    "@type": [
+      "http://example.org/ontology#City"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Comms",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Tokyo",
+    "@type": [
+      "http://example.org/ontology#City"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Symptom",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Barista",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://example.org/ontology#Occupation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://example.org/ontology#Occupation"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Healthy",
+    "@type": [
+      "http://example.org/ontology#PersonTrait"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Pain",
+    "@type": [
+      "http://example.org/ontology#Symptom"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#QuakeEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#DoctorX",
+    "@type": [
+      "http://example.org/ontology#Person"
+    ],
+    "http://example.org/ontology#hasOccupation": [
+      {
+        "@id": "http://example.org/ontology#Doctor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DoctorX"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Landmark",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#PatientX",
+    "@type": [
+      "http://example.org/ontology#Person",
+      "http://example.org/ontology#Disease",
+      "http://example.org/ontology#Covid19",
+      "http://example.org/ontology#Healthy"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "PatientX"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#BreathingApparatus",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Sparse",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Facility",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Protocol",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Event",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Amsterdam",
+    "@type": [
+      "http://example.org/ontology#City"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Amsterdam"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Coughing",
+    "@type": [
+      "http://example.org/ontology#Symptom"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#City",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Fever",
+    "@type": [
+      "http://example.org/ontology#Symptom"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Firefighter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://example.org/ontology#Occupation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://example.org/ontology#Occupation"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Resource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Occupation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Hose",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Population",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Covid19",
+    "@type": [
+      "http://example.org/ontology#Disease"
+    ],
+    "http://example.org/ontology#hasSymptom": [
+      {
+        "@id": "http://example.org/ontology#Coughing"
+      },
+      {
+        "@id": "http://example.org/ontology#Fever"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Disease",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Ambulance",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#RescueTools",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  }
+]

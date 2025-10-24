@@ -1,0 +1,85 @@
+@prefix ex: <http://example.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:Ambulance a owl:Class .
+
+ex:Amsterdam a ex:City .
+
+ex:BreathingApparatus a owl:Class .
+
+ex:Comms a owl:Class .
+
+ex:CovidEvent a owl:Class .
+
+ex:Crowded a owl:Class .
+
+ex:CustomerY a ex:Arrogant,
+        ex:Person ;
+    rdfs:label "CustomerY" ;
+    ex:hasTrait ex:Arrogant .
+
+ex:Disease a owl:Class .
+
+ex:Doctor a ex:Occupation,
+        owl:Class ;
+    rdfs:subClassOf ex:Occupation .
+
+ex:Event a owl:Class .
+
+ex:Facility a owl:Class .
+
+ex:Firefighter a ex:Occupation,
+        owl:Class ;
+    rdfs:subClassOf ex:Occupation .
+
+ex:Firetruck a owl:Class .
+
+ex:Hose a owl:Class .
+
+ex:Landmark a owl:Class .
+
+ex:PersonX a ex:Person ;
+    rdfs:label "PersonX" ;
+    ex:hasOccupation ex:Barista .
+
+ex:Population a owl:Class .
+
+ex:Protocol a owl:Class .
+
+ex:QuakeEvent_1 a ex:QuakeEvent .
+
+ex:RescueTools a owl:Class .
+
+ex:Resource a owl:Class .
+
+ex:Sparse a owl:Class .
+
+ex:Symptom a owl:Class .
+
+ex:Tokyo a ex:City .
+
+ex:Utrecht a ex:City ;
+    rdfs:label "Utrecht" .
+
+ex:Barista a ex:Occupation,
+        owl:Class ;
+    rdfs:subClassOf ex:Occupation .
+
+ex:Polite a ex:PersonTrait,
+        owl:Class .
+
+ex:QuakeEvent a owl:Class .
+
+ex:Arrogant a ex:PersonTrait,
+        owl:Class ;
+    owl:inverseOf ex:Polite .
+
+ex:Person a owl:Class .
+
+ex:PersonTrait a owl:Class .
+
+ex:City a owl:Class .
+
+ex:Occupation a owl:Class .
+

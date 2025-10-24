@@ -1,0 +1,107 @@
+@prefix ex: <http://example.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:Ambulance a owl:Class .
+
+ex:Barista a ex:Occupation,
+        owl:Class ;
+    rdfs:subClassOf ex:Occupation .
+
+ex:BreathingApparatus a owl:Class .
+
+ex:Comms a owl:Class .
+
+ex:CovidEvent_1 a ex:CovidEvent ;
+    ex:locatedIn ex:Amsterdam .
+
+ex:CovidIsolationProtocol a ex:Protocol ;
+    ex:appliesTo ex:Covid19 .
+
+ex:Crowded a owl:Class .
+
+ex:CustomerY a ex:Arrogant,
+        ex:Person ;
+    rdfs:label "CustomerY" ;
+    ex:hasTrait ex:Arrogant .
+
+ex:DoctorX a ex:Person ;
+    rdfs:label "DoctorX" ;
+    ex:hasOccupation ex:Doctor .
+
+ex:Dyspnea a ex:Symptom .
+
+ex:Event a owl:Class .
+
+ex:Facility a owl:Class .
+
+ex:Firefighter a ex:Occupation,
+        owl:Class ;
+    rdfs:subClassOf ex:Occupation .
+
+ex:Firetruck a owl:Class .
+
+ex:Hose a owl:Class .
+
+ex:Landmark a owl:Class .
+
+ex:Pain a ex:Symptom .
+
+ex:PatientX a ex:Covid19,
+        ex:Disease,
+        ex:Person ;
+    rdfs:label "PatientX" .
+
+ex:Polite a ex:PersonTrait,
+        owl:Class .
+
+ex:Population a owl:Class .
+
+ex:QuakeEvent_1 a ex:QuakeEvent .
+
+ex:RescueTools a owl:Class .
+
+ex:Resource a owl:Class .
+
+ex:Sparse a owl:Class .
+
+ex:Tokyo a ex:City .
+
+ex:Utrecht a ex:City .
+
+ex:Amsterdam a ex:City ;
+    rdfs:label "Amsterdam" .
+
+ex:Coughing a ex:Symptom .
+
+ex:CovidEvent a owl:Class .
+
+ex:Doctor a ex:Occupation,
+        owl:Class ;
+    rdfs:subClassOf ex:Occupation .
+
+ex:Fever a ex:Symptom .
+
+ex:Protocol a owl:Class .
+
+ex:QuakeEvent a owl:Class .
+
+ex:Arrogant a ex:PersonTrait,
+        owl:Class .
+
+ex:Covid19 a ex:Disease ;
+    ex:hasSymptom ex:Coughing,
+        ex:Fever .
+
+ex:Disease a owl:Class .
+
+ex:PersonTrait a owl:Class .
+
+ex:City a owl:Class .
+
+ex:Person a owl:Class .
+
+ex:Symptom a owl:Class .
+
+ex:Occupation a owl:Class .
+

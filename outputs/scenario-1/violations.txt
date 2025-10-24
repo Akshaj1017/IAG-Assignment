@@ -1,0 +1,1 @@
+Trait conflict: ex:CustomerY cannot be both ex:Arrogant and ex:Polite.

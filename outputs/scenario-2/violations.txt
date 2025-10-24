@@ -1,0 +1,1 @@
+Quake resources missing: ex:QuakeEvent_1 (magnitude 8.0) lacks ex:Firetruck, ex:Hose, ex:BreathingApparatus, ex:Ambulance, ex:RescueTools, ex:Comms.
