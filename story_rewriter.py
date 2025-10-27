@@ -1,4 +1,3 @@
-# story_rewriter.py
 from __future__ import annotations
 
 import re
@@ -27,38 +26,9 @@ class LocalRuleRewriter(RewriterProvider):
         self.cfg = cfg or LocalRuleConfig()
 
     def rewrite(self, prompt: str) -> str:
-        return prompt  # provider echoes; deterministic edits handled by facade
-
-@dataclass
-class OpenAIRewriterConfig:
-    model: str = "gpt-4o-mini"
-    temperature: float = 0.4
-    max_tokens: int = 900
-
-class OpenAIRewriter(RewriterProvider):  # optional
-    def __init__(self, cfg: OpenAIRewriterConfig):
-        self.cfg = cfg
-        import os
-        from openai import OpenAI  # type: ignore
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-    def rewrite(self, prompt: str) -> str:
-        resp = self.client.chat.completions.create(
-            model=self.cfg.model,
-            temperature=self.cfg.temperature,
-            messages=[
-                {"role": "system", "content": "You repair stories to satisfy ontology rules; keep tone and length."},
-                {"role": "user", "content": prompt},
-            ],
-            max_tokens=self.cfg.max_tokens,
-        )
-        return resp.choices[0].message["content"].strip()
+        return prompt
 
 class StoryRewriter:
-    """
-    Execution Graph mapping: 'Story Rewriting' (only if violations exist).
-    Performs deterministic edits around the provider to guarantee fixes.
-    """
     def __init__(self, provider: RewriterProvider, config: StoryRewriterConfig):
         self.provider = provider
         self.config = config
@@ -67,41 +37,47 @@ class StoryRewriter:
     def rewrite(self, original_story: str, violations: List[str], instructions: str) -> str:
         text = original_story
 
-        # Deterministic fix: add quake resources sentence if needed
-        needs_quake_resources = any("Quake resources missing" in v for v in violations)
-        if needs_quake_resources and self.local_rules.add_quake_resources_sentence:
+        # === 1. Add quake resources if needed
+        if any("Quake resources missing" in v for v in violations):
             if self.local_rules.resource_sentence not in text:
                 if not text.endswith((".", "!", "?")):
                     text += "."
                 text += " " + self.local_rules.resource_sentence
 
-        # Collapse multi-occupation mentions
+        # === 2. Collapse multiple occupations
         occ = "|".join(map(re.escape, self.local_rules.occupations))
-        pats = [
+        occupation_patterns = [
             rf"\b(as\s+a\s+)?({occ})\b\s*(?:,?\s*and\s*|\s*&\s*)\b(a\s+)?({occ})\b",
             rf"\b({occ})\b\s*(?:,?\s*and\s*|\s*&\s*)\b({occ})\b",
         ]
-        def _collapse(m: re.Match) -> str:
-            first = m.group(2) if m.lastindex and m.group(2) else m.group(1)
-            if first is None: first = m.group(0)
-            if not first.lower().startswith(("a ", "an ", "as ")):
-                return f"a {first}"
-            return first
-        for p in pats:
-            text = re.sub(p, _collapse, text, flags=re.I)
+        def _collapse(match: re.Match) -> str:
+            first = match.group(2) if match.lastindex and match.group(2) else match.group(1)
+            return f"a {first}" if first and not first.lower().startswith(("a ", "an ", "as ")) else first
+        for pattern in occupation_patterns:
+            text = re.sub(pattern, _collapse, text, flags=re.I)
 
-        # Avoid 'arrogant' and 'polite' together without contrast
-        sents = re.split(r"(?<=[.!?])\s+", text)
+        # === 3. Remove Polite if both Arrogant and Polite are mentioned (without contrast)
+        sentences = re.split(r"(?<=[.!?])\s+", text)
         cleaned = []
-        for s in sents:
-            low = s.lower()
-            if "arrogant" in low and "polite" in low and "despite" not in low and "although" not in low:
+        for s in sentences:
+            lower = s.lower()
+            if "arrogant" in lower and "polite" in lower and not any(k in lower for k in ["despite", "although"]):
                 s = re.sub(r"\bpolite\b", "", s, flags=re.I)
                 s = re.sub(r"\s{2,}", " ", s).strip()
             cleaned.append(s)
         text = " ".join(cleaned)
 
-        # Provider pass (LLM or local echo)
+        # === 4. Handle health conflict: remove "healthy"
+        if any("Health conflict" in v for v in violations):
+            text = re.sub(r"\bhealthy\b", "", text, flags=re.I)
+            text = re.sub(r"\s{2,}", " ", text).strip()
+
+        # === 5. Remove 'Polite' if it's still unhandled
+        if any("Trait conflict" in v for v in violations):
+            text = re.sub(r"\bpolite\b", "", text, flags=re.I)
+            text = re.sub(r"\s{2,}", " ", text).strip()
+
+        # === 6. Provider LLM or echo rule-based fallback
         provider_input = (
             f"INSTRUCTIONS: {self.config.instructions}\n"
             f"CONSTRAINTS: Keep one occupation per person; if an earthquake magnitude >7 is present, "
@@ -109,17 +85,6 @@ class StoryRewriter:
             f"Do not state that the same person is both Arrogant and Polite unless you explicitly explain the contradiction.\n\n"
             f"TEXT:\n{text}"
         )
-        text = self.provider.rewrite(provider_input)
+        rewritten = self.provider.rewrite(provider_input)
 
-        # Final cleanup again
-        for p in pats:
-            text = re.sub(p, _collapse, text, flags=re.I)
-        sents = re.split(r"(?<=[.!?])\s+", text)
-        cleaned = []
-        for s in sents:
-            low = s.lower()
-            if "arrogant" in low and "polite" in low and "despite" not in low and "although" not in low:
-                s = re.sub(r"\bpolite\b", "", s, flags=re.I)
-                s = re.sub(r"\s{2,}", " ", s).strip()
-            cleaned.append(s)
-        return " ".join(cleaned).strip()
+        return rewritten.strip()

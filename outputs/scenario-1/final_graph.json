@@ -1,59 +1,12 @@
 [
   {
-    "@id": "http://example.org/ontology#Firetruck",
+    "@id": "http://example.org/ontology#Hose",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
-    "@id": "http://example.org/ontology#Doctor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://example.org/ontology#Occupation"
-      }
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#Crowded",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#QuakeEvent_1",
-    "@type": [
-      "http://example.org/ontology#QuakeEvent"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#CovidEvent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#PersonTrait",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#Person",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#Polite",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#Arrogant",
+    "@id": "http://example.org/ontology#Disease",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -70,13 +23,31 @@
     ]
   },
   {
-    "@id": "http://example.org/ontology#Comms",
+    "@id": "http://example.org/ontology#Facility",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
-    "@id": "http://example.org/ontology#Symptom",
+    "@id": "http://example.org/ontology#City",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#RescueTools",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Firetruck",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Event",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -93,13 +64,7 @@
     ]
   },
   {
-    "@id": "http://example.org/ontology#QuakeEvent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#BreathingApparatus",
+    "@id": "http://example.org/ontology#Protocol",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -111,13 +76,7 @@
     ]
   },
   {
-    "@id": "http://example.org/ontology#Sparse",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#Facility",
+    "@id": "http://example.org/ontology#Population",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -139,19 +98,78 @@
     ]
   },
   {
-    "@id": "http://example.org/ontology#Protocol",
+    "@id": "http://example.org/ontology#Symptom",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
-    "@id": "http://example.org/ontology#Event",
+    "@id": "http://example.org/ontology#BreathingApparatus",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
-    "@id": "http://example.org/ontology#City",
+    "@id": "http://example.org/ontology#QuakeEvent_1",
+    "@type": [
+      "http://example.org/ontology#QuakeEvent"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Doctor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://example.org/ontology#Occupation"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Arrogant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Comms",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Crowded",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#QuakeEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Person",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Polite",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Resource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#Sparse",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -168,31 +186,7 @@
     ]
   },
   {
-    "@id": "http://example.org/ontology#Resource",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#Occupation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#Hose",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#Population",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "http://example.org/ontology#Disease",
+    "@id": "http://example.org/ontology#Ambulance",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -215,13 +209,19 @@
     ]
   },
   {
-    "@id": "http://example.org/ontology#Ambulance",
+    "@id": "http://example.org/ontology#CovidEvent",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
-    "@id": "http://example.org/ontology#RescueTools",
+    "@id": "http://example.org/ontology#Occupation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://example.org/ontology#PersonTrait",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
